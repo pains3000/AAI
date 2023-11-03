@@ -1,11 +1,14 @@
-import aiml # Create the kernel and learn AIML files 
+import aiml
+
+# Create the kernel and learn AIML files during initialization
 kernel = aiml.Kernel()
-kernel.learn("std-startup.xml")
-kernel.respond("load aiml b") # Press CTRL-C to break this loop 
+kernel.learn("std-startup1.xml")
+
+# Press CTRL-C to break this loop
 while True:
-    message = input("Enter your message to the bot: ") 
+    message = input("Enter your message to the bot: ")
     if message == "quit":
-       break 
+        break
     else:
-        bot_response = kernel.respond(message) 
+        bot_response = kernel.respond(message)
         print(bot_response)
